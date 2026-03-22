@@ -1,5 +1,6 @@
 import ArticleCreateForm from "@/components/ArticleCreateForm"
 import NavBar from "@/components/NavBar";
+import { requireAuth } from "@/lib/auth";
 import { getMe } from "@/services/api"
 import Link from "next/link";
 import { Suspense } from "react";
@@ -15,7 +16,9 @@ function NavBarSkeleton() {
     );
 }
 
-export default function MeArticlesCreate() {
+export default async function MeArticlesCreate() {
+    await requireAuth()
+
     const userPromise = getMe().catch(() => null)
 
     return (

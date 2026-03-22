@@ -1,5 +1,6 @@
 import ArticleList from "@/components/ArticleList"
 import NavBar from "@/components/NavBar"
+import { requireAuth } from "@/lib/auth"
 import { getMe, getMeArticles } from "@/services/api"
 import Link from "next/link"
 import { Suspense } from "react"
@@ -29,7 +30,9 @@ function ArticleListSkeleton() {
     );
 }
 
-export default function MeArticles() {
+export default async function MeArticles() {
+    await requireAuth()
+
     const articlesPromise = getMeArticles()
     const userPromise = getMe().catch(() => null)
 

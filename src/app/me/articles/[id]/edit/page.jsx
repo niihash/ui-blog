@@ -1,5 +1,6 @@
 import ArticleEditForm from "@/components/ArticleEditForm"
 import NavBar from "@/components/NavBar";
+import { requireAuth } from "@/lib/auth";
 import { getMe, getMeArticle } from "@/services/api"
 import Link from "next/link";
 import { Suspense } from "react";
@@ -16,6 +17,8 @@ function NavBarSkeleton() {
 }
 
 export default async function MeArticleEdit({ params }) {
+    await requireAuth()
+
     const userPromise = getMe().catch(() => null)
     const { id } = await params
     const articlePromise = getMeArticle(id)
