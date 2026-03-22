@@ -1,0 +1,43 @@
+#+title: ui-blog
+#+author: niihash
+#+options: toc:t
+
+* Descrição
+O *ui-blog* é uma aplicação frontend desenvolvida com Next.js que permite aos usuários se cadastrar, autenticar e gerenciar artigos. A plataforma oferece funcionalidades completas de CRUD (criação, leitura, edição e exclusão), além de uma interface moderna e responsiva para consumo de conteúdo.
+
+* Funcionalidades
+- Cadastro e login de usuários
+- Autenticação baseada em sessão (Laravel Sanctum)
+- Criação, edição e exclusão de artigos (CRUD)
+- Listagem e visualização de artigos
+- Proteção de rotas
+- Interface responsiva com Tailwind CSS
+
+* Tecnologias
+- Next.js
+- React
+- Tailwind CSS
+- Laravel (backend)
+- Sanctum (autenticação)
+
+* Instalação
+
+#+BEGIN_SRC bash
+git clone https://github.com/niihash/ui-blog.git
+cd ui-blog
+npm install
+#+END_SRC
+
+* Execução
+
+#+BEGIN_SRC bash
+npm run dev
+#+END_SRC
+
+Acesse em:
+http://localhost:3000
+
+* Backend
+
+Este projeto depende de uma API backend (Laravel). Certifique-se de que o servidor backend esteja rodando corretamente.
+Repositório do Backend: https://github.com/niihash/api-blog.git
