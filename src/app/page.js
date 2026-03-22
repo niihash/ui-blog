@@ -34,10 +34,10 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-white text-neutral-900">
-            <Suspense fallback={<p>Carregando Navbar</p>}>
+            <Suspense fallback={<NavBarSkeleton />}>
                 <NavBar userPromise={userPromise} />
             </Suspense>
-            <Suspense fallback={<p>Carregando artigos</p>}>
+            <Suspense fallback={<ArticleListSkeleton />}>
                 <ArticleList articlesPromise={articlesPromise} userPromise={userPromise} />
             </Suspense>
         </div>
