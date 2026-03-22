@@ -11,8 +11,8 @@ export default function ArticleCreateForm() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        e.setError(null)
-        e.setLoading(true)
+        setError(null)
+        setLoading(true)
 
         const title = e.target.title.value
         const content = e.target.content.value
